@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 typedef struct fnode *fpointer;
 struct fnode {
     char animal[10];
     int item;
     fpointer next;
 };
+
 int main(void) {
     fpointer head = NULL, ptr, another, before = NULL;
     int k, how_many = 0;
@@ -34,5 +36,6 @@ int main(void) {
         ptr = ptr->next;
     }
     printf("Total number of items: %d\n", how_many);
+
     return 0;
 }

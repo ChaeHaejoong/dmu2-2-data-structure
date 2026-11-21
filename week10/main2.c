@@ -1,10 +1,13 @@
 #include <stdio.h>
+
 int add_product(int *a, int b) {
     int temp = b;
     b = *a + b;
     *a = *a * temp;
+
     return b;
 }
+
 int main(void) {
     int x = 10, y = 20, z;
     z = add_product(&x, y);
