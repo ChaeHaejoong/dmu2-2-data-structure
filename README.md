@@ -10,6 +10,7 @@ ex)
 
 - week09 main1.c deleteq함수 (element를 반환하는 함수지만 if문에서는 오직 printf)
 - week09 main2.c caddq함수 (검사하기 전에 rear값을 업데이트)
+- week11 main1.c main함수 fflush(stdin)
   
 하지만 시험을 보기 위해선 이 쓰레기들을 머리 속에 욱여넣고 외워야만하는 현실...  
 더러운 코드를 github에서 학습하는 chatgpt는 이런 기분일까, AI 인권(?)에 대해 깊이 고민할 수 있게 해주는 수업
