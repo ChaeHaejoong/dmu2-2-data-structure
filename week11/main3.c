@@ -9,7 +9,7 @@ struct service_node {
 };
 spointer ptr = NULL;
 
-void cbuild(spointer inode) {
+void insert_consultant(spointer inode) {
     if (!ptr) {
         inode->next = inode;
         ptr = inode;
@@ -53,7 +53,7 @@ int main() {
         temp = (spointer)malloc(sizeof(struct service_node));
         printf("Input consultant name and the number of waiting customers: ");
         scanf("%s %d", temp->cname, &(temp->cnum));
-        cbuild(temp);
+        insert_consultant(temp);
     }
 
     printf("The data contain in the circular linked list ==== \n");

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 typedef struct BookNode {
     int bookNo;
     char title[100];
@@ -8,12 +9,14 @@ typedef struct BookNode {
     struct BookNode *rlink;
 } BookNode;
 BookNode *head = NULL;
-void insertFront(BookNode *node, BookNode *book) {
-    book->llink = node;
-    book->rlink = node->rlink;
-    node->rlink->llink = book;
-    node->rlink = book;
+
+void insertFront(BookNode *prev, BookNode *newBook) {
+    newBook->llink = prev;
+    newBook->rlink = prev->rlink;
+    prev->rlink->llink = newBook;
+    prev->rlink = newBook;
 }
+
 void deleteBook(BookNode *book) {
     if (head == book) {
         printf("Deletion of head node not permitted.\n");
@@ -23,6 +26,7 @@ void deleteBook(BookNode *book) {
         free(book);
     }
 }
+
 void printBooks() {
     BookNode *book = head->rlink;
     while (book != head) {
@@ -33,6 +37,7 @@ void printBooks() {
         book = book->rlink;
     }
 }
+
 int main(void) {
     BookNode *book;
     int i;
@@ -49,5 +54,6 @@ int main(void) {
     deleteBook(head->rlink);
     printf("\n[첫번째 도서 삭제 후 출력]\n");
     printBooks();
+
     return 0;
 }
