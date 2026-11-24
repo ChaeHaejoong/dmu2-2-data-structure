@@ -1,0 +1,4 @@
+1 chae 10
+2 kim 85
+3 lee 91
+4 park 90
